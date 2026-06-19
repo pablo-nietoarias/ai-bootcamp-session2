@@ -35,6 +35,8 @@ section {
   display: flex;
   gap: 10px;
   margin-top: 10px;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 input {
@@ -44,18 +46,45 @@ input {
   border-radius: 4px;
 }
 
-button {
+/* Material Design filled button */
+.primary-button {
   padding: 8px 16px;
-  background-color: #61dafb;
-  color: #282c34;
+  background-color: #6200ea;
+  color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   font-weight: bold;
 }
 
-button:hover {
-  background-color: #21a1c9;
+.primary-button:hover {
+  background-color: #3700b3;
+}
+
+.primary-button:disabled {
+  background-color: #bdbdbd;
+  cursor: not-allowed;
+}
+
+/* Material Design outlined button */
+.secondary-button {
+  padding: 8px 16px;
+  background-color: transparent;
+  color: #6200ea;
+  border: 2px solid #6200ea;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.secondary-button:hover {
+  background-color: rgba(98, 0, 234, 0.08);
+}
+
+.secondary-button:disabled {
+  color: #bdbdbd;
+  border-color: #bdbdbd;
+  cursor: not-allowed;
 }
 
 ul {
@@ -63,29 +92,175 @@ ul {
   padding: 0;
 }
 
-li {
-  padding: 10px;
+/* Todo item card */
+.todo-item {
+  padding: 12px 16px;
   border-bottom: 1px solid #ddd;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: #fff;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.todo-item:last-child {
+  margin-bottom: 0;
+}
+
+.todo-item-main {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-li:last-child {
-  border-bottom: none;
+.todo-item-name {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #212121;
 }
 
-.delete-btn {
-  background-color: #f44336;
-  color: white;
-  padding: 6px 12px;
+.due-date {
   font-size: 0.8rem;
-  margin-left: 10px;
+  color: #757575;
 }
 
-.delete-btn:hover {
-  background-color: #d32f2f;
+.todo-item-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+/* Tag badge pill */
+.tag-badge {
+  display: inline-flex;
+  align-items: center;
+  background-color: #e8eaf6;
+  color: #3949ab;
+  border-radius: 12px;
+  padding: 2px 8px;
+  font-size: 0.78rem;
+  gap: 4px;
+}
+
+.tag-name {
+  cursor: pointer;
+}
+
+.tag-name:hover {
+  text-decoration: underline;
+}
+
+.tag-edit-input {
+  width: 80px;
+  padding: 2px 4px;
+  border: 1px solid #3949ab;
+  border-radius: 4px;
+  font-size: 0.78rem;
+}
+
+.tag-remove-btn {
+  background: none;
+  border: none;
+  color: #3949ab;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0;
+  line-height: 1;
+}
+
+.tag-remove-btn:hover {
+  color: #b71c1c;
+}
+
+/* Tag input inline */
+.tag-input {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.tag-input input {
+  width: 90px;
+  padding: 2px 6px;
+  font-size: 0.78rem;
+  border: 1px solid #bdbdbd;
+  border-radius: 12px;
+}
+
+.tag-input button {
+  background: none;
+  border: 1px solid #bdbdbd;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  color: #616161;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tag-input button:hover {
+  background-color: #e8eaf6;
+  color: #3949ab;
+}
+
+/* Toast notifications */
+.toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 360px;
+}
+
+.toast {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-radius: 6px;
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  font-size: 0.9rem;
+  gap: 12px;
+}
+
+.toast-success {
+  background-color: #388e3c;
+}
+
+.toast-error {
+  background-color: #c62828;
+}
+
+.toast-warning {
+  background-color: #f57f17;
+}
+
+.toast-close-btn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.toast-close-btn:hover {
+  opacity: 0.75;
 }
 
 .error {

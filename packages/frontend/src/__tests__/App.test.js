@@ -12,8 +12,8 @@ const server = setupServer(
     return res(
       ctx.status(200),
       ctx.json([
-        { id: 1, name: 'Test Item 1', created_at: '2023-01-01T00:00:00.000Z' },
-        { id: 2, name: 'Test Item 2', created_at: '2023-01-02T00:00:00.000Z' },
+        { id: 1, name: 'Test Item 1', created_at: '2023-01-01T00:00:00.000Z', due_date: null, tags: [] },
+        { id: 2, name: 'Test Item 2', created_at: '2023-01-02T00:00:00.000Z', due_date: null, tags: [] },
       ])
     );
   }),
@@ -35,6 +35,8 @@ const server = setupServer(
         id: 3,
         name,
         created_at: new Date().toISOString(),
+        due_date: null,
+        tags: [],
       })
     );
   })
