@@ -57,6 +57,7 @@ class TodoPage {
   }
 
   async getTodoItems() {
+    await this.page.locator('li.todo-item').first().waitFor({ timeout: 5000 }).catch(() => {});
     return this.page.locator('li.todo-item').all();
   }
 
